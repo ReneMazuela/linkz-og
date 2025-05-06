@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
             backgroundImage: `url(${background})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.7,
+            opacity: 0.8,
             position: 'absolute',
             top: 0,
             left: 0,
