@@ -75,7 +75,7 @@ export async function GET(req: NextRequest) {
               objectFit: 'cover',
             }}
           />
-          <h1 style={{ fontSize: 78, marginTop: 30 }}>{username}</h1>
+          <h1 style={{ fontSize: 78, marginTop: 30 }}>linkz.gg/{username}</h1>
         </div>
       </div>
     ),
