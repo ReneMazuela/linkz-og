@@ -17,27 +17,52 @@ export async function GET(req: NextRequest) {
         style={{
           width: '1200px',
           height: '630px',
+          position: 'relative',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundImage: `url(${background})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
           color: 'white',
+          fontFamily: 'sans-serif',
         }}
       >
-        <img
-          src={avatar}
-          width={280}
-          height={280}
+        {/* Background image with reduced opacity */}
+        <div
           style={{
-            borderRadius: '50%',
-            border: '6px solid white',
-            objectFit: 'cover',
+            backgroundImage: `url(${background})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.3,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 0,
           }}
         />
-        <h1 style={{ fontSize: 78, marginTop: 30 }}>{username}</h1>
+
+        {/* Foreground content */}
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <img
+            src={avatar}
+            width={280}
+            height={280}
+            style={{
+              borderRadius: '50%',
+              border: '6px solid white',
+              objectFit: 'cover',
+            }}
+          />
+          <h1 style={{ fontSize: 78, marginTop: 30 }}>{username}</h1>
+        </div>
       </div>
     ),
     {
