@@ -1,6 +1,6 @@
 export async function fetchPublicProfile(username: string) {
     const encodedUsername = encodeURIComponent(`ilike.${username}`)
-    const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/public_profiles?username=${encodedUsername}&select=username,displayname,avatar_url,background_url,cursor_url,description,location,badges,views,likes`
+    const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/public_profiles?username=${encodedUsername}&select=username,displayname,avatar_url`
   
     try {
       const res = await fetch(url, {
