@@ -29,8 +29,8 @@ export async function GET(req: NextRequest) {
       >
         <img
           src={avatar}
-          width={180}
-          height={180}
+          width={280}
+          height={280}
           style={{
             borderRadius: '50%',
             border: '6px solid white',
