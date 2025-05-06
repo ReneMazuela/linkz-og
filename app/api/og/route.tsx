@@ -21,17 +21,16 @@ export async function GET(req: NextRequest) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
           fontFamily: 'sans-serif',
         }}
       >
-        {/* Background image with reduced opacity */}
+        {/* Layer 1: Background image with lower opacity */}
         <div
           style={{
             backgroundImage: `url(${background})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.3,
+            opacity: 0.25,
             position: 'absolute',
             top: 0,
             left: 0,
@@ -41,14 +40,29 @@ export async function GET(req: NextRequest) {
           }}
         />
 
-        {/* Foreground content */}
+        {/* Layer 2: Black overlay */}
+        <div
+          style={{
+            backgroundColor: 'black',
+            opacity: 0.85,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 1,
+          }}
+        />
+
+        {/* Layer 3: Foreground content */}
         <div
           style={{
             position: 'relative',
-            zIndex: 1,
+            zIndex: 2,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            color: 'white',
           }}
         >
           <img
